@@ -12,22 +12,42 @@
   </header>
 
   <main class="container">
+    <main class="container">
     <h2 class="page-title">実施中のキャンペーン情報</h2>
 
-    <!-- キャンペーンカードのモジュール -->
-    <div class="card">
+    <!-- カテゴリ切り替えタブ -->
+    <div class="tab-menu">
+      <button class="tab-btn is-active" data-category="all">すべて</button>
+      <button class="tab-btn" data-category="nisa">NISA</button>
+      <button class="tab-btn" data-category="us-stock">米国株</button>
+    </div>
+
+    <!-- 1つ目のカード（data-category="nisa" を追加） -->
+    <div class="card" data-category="nisa">
       <span class="card__badge">人気</span>
       <h3 class="card__title">新NISA応援！投信積立ポイント還元</h3>
-      <p class="card__text">期間中に新NISA口座で対象の投資信託を積立設定すると、ポイント最大2.0%還元！</p>
+      <p class="card__text">期間中に新NISA口座で対象の投資信託を積立設定すると、ポイント最大2.5%還元！</p>
       <div class="card__meta">
-        <span class="card__date">期間：2026年10月1日〜2026年12月31日</span>
+        <span class="card__date">期間：2026年10月1日〜2026年11月30日</span>
       </div>
       <a href="#" class="btn btn--primary">詳細を見る</a>
     </div>
 
-    <!-- 今後ここに新しいキャンペーンを追加していきます -->
-    <div id="campaign-list"></div>
+    <!-- 2つ目のカード（data-category="us-stock" を追加） -->
+    <div class="card" data-category="us-stock">
+      <span class="card__badge">限定</span>
+      <h3 class="card__title">米国株 取引手数料実質0円キャンペーン</h3>
+      <p class="card__text">期間中にエントリーし、対象の米国株式を購入すると、取引手数料を全額キャッシュバック！</p>
+      <div class="card__meta">
+        <span class="card__date">期間：2026年11月1日〜2026年11月30日</span>
+      </div>
+      <a href="#" class="btn btn--primary">詳細を見る</a>
+    </div>
   </main>
+
+    <!-- 今後ここに新しいキャンペーンを追加していきます -->
+    <!-- 2つ目のキャンペーンカード -->
+    
 
   <script src="main.js"></script>
 </body>
