@@ -30,3 +30,20 @@ tabButtons.forEach(button => {
     });
   });
 });
+
+// 新NISAキャンペーン終了日（2026年11月30日）
+const targetDate = new Date('2026-11-30T23:59:59');
+const today = new Date();
+
+// 差分ミリ秒から日数へ変換
+const diffTime = targetDate - today;
+const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+const countdownEl = document.getElementById('nisa-countdown');
+if (countdownEl) {
+  if (diffDays > 0) {
+    countdownEl.textContent = `キャンペーン終了まで あと ${diffDays} 日`;
+  } else {
+    countdownEl.textContent = `キャンペーンは終了しました`;
+  }
+}
