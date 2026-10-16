@@ -47,3 +47,41 @@ if (countdownEl) {
     countdownEl.textContent = `キャンペーンは終了しました`;
   }
 }
+const form = document.getElementById('signup-form');
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById('username').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+
+    // エラーメッセージの初期化
+    nameError.textContent = '';
+    emailError.textContent = '';
+
+    let isValid = true;
+
+    // お名前チェック
+    if (username === '') {
+      nameError.textContent = 'お名前を入力してください';
+      isValid = false;
+    }
+
+    // メールアドレスチェック
+    if (email === '') {
+      emailError.textContent = 'メールアドレスを入力してください';
+      isValid = false;
+    } else if (!email.includes('@')) {
+      emailError.textContent = '正しいメールアドレスの形式で入力してください';
+      isValid = false;
+    }
+
+    // 入力成功時
+    if (isValid) {
+      alert('送信が完了しました！');
+      form.reset();
+    }
+  });
+}
